@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Moon, Sun,  Mail } from 'lucide-react'
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -8,11 +8,26 @@ import ContactForm from "@/components/ContactForm";
 
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+
+  // load preference from localstorage on mount
+   useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+    setDarkMode(isDark);
+      document.documentElement.classList.toggle("dark", isDark);
+   }, []);
 
   const toggleDarkMode = () => {
+    const newDarkMode = !darkMode;
+   
     setDarkMode(!darkMode);
-    document.documentElement.classList.toggle(`dark`);
+   document.documentElement.classList.toggle("dark", newDarkMode);
+
+   localStorage.setItem("theme", newDarkMode ? "dark" : "light");
   };
 
   const porjects = [

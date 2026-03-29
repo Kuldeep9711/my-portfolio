@@ -1,7 +1,7 @@
+'use client'
+
 import { useState } from "react"
 import { motion } from "framer-motion";
-
-
 
 export default function ContactForm() {
     const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')

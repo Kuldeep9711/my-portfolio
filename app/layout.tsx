@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: "Kuldeep Saini | Fullstack Developer",
   description: "Next.js & Typescript Fullstack Developer | Building modern web apps",
-  icons: { icon: '/favicon.ico' },
+ // icons: { icon: '/favicon.ico' },
 };
 
 export default function RootLayout({
@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="dark"
+       suppressHydrationWarning
     >
-      <body className={`${inter.className} bg-zinc-950 text-zinc-100`}>{children}</body>
+      <body className={`${inter.className} bg-zinc-950 text-zinc-100 dark:bg-zinc-950 dark:text-zinc-100`}>{children}</body>
     </html>
   );
 }
