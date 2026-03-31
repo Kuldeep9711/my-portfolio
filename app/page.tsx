@@ -24,7 +24,7 @@ export default function Home() {
   const toggleDarkMode = () => {
     const newDarkMode = !darkMode;
    
-    setDarkMode(!darkMode);
+    setDarkMode(newDarkMode);
    document.documentElement.classList.toggle("dark", newDarkMode);
 
    localStorage.setItem("theme", newDarkMode ? "dark" : "light");
@@ -42,8 +42,8 @@ export default function Home() {
       { threshold: 0.5, rootMargin: '-100px 0px -50% 0px' }
     );
 
-    const section = document.querySelectorAll('section[id]');
-    section.forEach((section) => observer.observe(section));
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
   }, []);
@@ -53,22 +53,22 @@ export default function Home() {
     element?.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
-    })
+    });
   };
 
-  const porjects = [
+  const projects = [
     {
       title: "Project One",
-      desc: "Fullstack app with Next.js, Prisma, and PostgrsSQL",
+      desc: "Fullstack app with Next.js, Prisma, and PostgreSQL",
       tech: ["Next.js", "TypeScript", "Tailwind"],
       link: "#",
       github: "#",
     },
-    // Later add 3-4 real/improved projects here
+    //  Add 3-4 real/improved projects here
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300">
 
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
@@ -139,7 +139,7 @@ export default function Home() {
            transition={{ delay: 0.5 }}
            className="flex gap-4 justify-center"
            >
-          <a href="#project" className="px-8 py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-full font-medium transition">
+          <a href="#projects" className="px-8 py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-full font-medium transition">
            View My Work 
           </a>
           <a href="#contact" className="px-8 py-3 border border-zinc-700 dark:text-zinc-300 rounded-full font-medium transition">
@@ -150,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* Project Section with Stagger Animation */}
-         <section id="projects" className="py-24 bg-zinc-50 dark:bg-zinc-900 transition-colors duration-300">
+         <section id="projects" className="py-24 bg-zinc-100 dark:bg-zinc-900 transition-colors duration-300">
           <div className="max-w-6xl max-auto px-6">
                <motion.h2
                initial={{ opacity: 0 }}
@@ -161,14 +161,14 @@ export default function Home() {
                </motion.h2>
 
                <div className="grid md:grid-cols-2 gap-6">
-                 {porjects.map((project, index) => (
+                 {projects.map((project, index) => (
                   <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.03 }}
-                  className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl group transition-colors duration-300"
+                  className="bg-slate-50 dark:bg-zinc-950 border border-zinc-200 shadow-sm hover:shadow-md"
                   >
                    <h3 className="text-2xl font-semibold mb-3 text-zinc-900 dark:text-white">
                      {project.title}
@@ -194,7 +194,7 @@ export default function Home() {
          </section>
 
          {/* About Section */}
-         <section id="about" className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300">
+         <section id="about" className="py-24 bg-slate-50 dark:bg-zinc-950 transition-colors duration-300">
           <div className="max-w-4xl mx-auto px-6 text-center">
            <h2 className="text-4xl font-bold mb-8 text-zinc-900 dark:text-white">About Me</h2>
            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -205,7 +205,7 @@ export default function Home() {
          </section>
         
         {/* Contact Section with Working form */}
-        <section id="contact" className="py-24 bg-zinc-50 dark:bg-zinc-900 transition-colors duration-300">
+        <section id="contact" className="py-24 bg-zinc-100 dark:bg-zinc-900 transition-colors duration-300">
           <div className="max-w-2xl mx-auto px-6"> {/* it is good looking */}
            <h2 className="text-4xl font-bold mb-12 text-center text-zinc-900 dark:text-white">Let's Connect</h2>
        <ContactForm />
@@ -213,12 +213,12 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 border-t border-zinc-200 dark:border-zinc-800 text-center text-zinc-400 dark:text-zinc-500 bg-white dark:bg-zinc-950 transition-colors duration-300">
+        <footer className="py-12 border-t border-zinc-200 dark:border-zinc-800 text-center text-zinc-400 dark:text-zinc-500 bg-slate-50 dark:bg-zinc-950 transition-colors duration-300">
           <div className="flex justify-center gap-6 mb-4">
              <a href="#" className="hover:text-violet-500 dark:hover:text-violet-400 transition">
                <FaLinkedin size={20} />
              </a>
-             <a href="#" className="hover:text-violet-500 dark:hover:text-violet-400 transition">
+             <a href="https://github.com/Kuldeep9711" className="hover:text-violet-500 dark:hover:text-violet-400 transition">
               <FaGithub size={20} />
              </a>
              <a href="#" className="hover:text-violet-500 dark:hover:text-violet-400 transition">
