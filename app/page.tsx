@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Moon, Sun } from 'lucide-react'
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
+import Navbar from "@/components/Navbar";
 
 
 export default function Home() {
@@ -48,14 +48,7 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  };
-
+ 
   const projects = [
     {
       title: "Project One",
@@ -71,45 +64,11 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300">
 
       {/* Navbar */}
-      <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-         <motion.div
-         initial={{ opacity: 0, y: -20 }}
-         animate={{ opacity: 1, y: 0 }}
-         className="text-2xl font-bold text-zinc-900 dark:text-white"
-         >
-         Kuldeep<span className="text-violet-500">.</span>
-         </motion.div>
-
-         <div className="hidden md:flex items-center gap-8">
-         {[
-          { id: 'home', label: 'Home' },
-           { id: 'projects', label: 'Projects' },
-            { id: 'about', label: 'About' },
-             { id: 'contact', label: 'Contact' },
-         ].map((item) => (
-          <button
-          key={item.id}
-          onClick={() => scrollToSection(item.id)}
-          className={`transition hover:text-violet-500 dark:hover:text-violet-400 ${
-            activeSection === item.id
-            ? 'text-violet-500 dark:text-violet-400 font-medium'
-            : 'text-zinc-500 dark:text-zinc-400'
-            }`}
-          >
-          {item.label}
-          </button>
-         ))}
-
-      <button
-      onClick={toggleDarkMode}
-      className="p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition text-zinc-600 dark:text-zinc-300"
-      >
-        {darkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
-      </button>
-         </div>
-        </div>
-      </nav>
+         <Navbar
+           darkMode={darkMode}
+         toggleDarkMode={toggleDarkMode}
+         activeSection={activeSection}
+         />
 
       {/* Hero Section with Animation */}
       <section id="home" className="min-h-screen flex items-center pt-20 px-6">
