@@ -54,7 +54,7 @@ export default function Home() {
       title: "Project One",
       desc: "Fullstack app with Next.js, Prisma, and PostgreSQL",
       tech: ["Next.js", "TypeScript", "Tailwind"],
-      link: "#",
+      link: "https://next-expense-tracker-u7sz.vercel.app",
       github: "#",
     },
     //  Add 3-4 real/improved projects here
