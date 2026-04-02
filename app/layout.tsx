@@ -6,8 +6,12 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Kuldeep Saini | Fullstack Developer",
-  description: "Next.js & Typescript Fullstack Developer | Building modern web apps",
- // icons: { icon: '/favicon.ico' },
+  description: "Fullstack developer specializing in Next.js, TypeScript and PostgreSQL. Open to work",
+   openGraph: {
+    title: 'Kuldeep Saini | Fullstack Developer',
+    description: '...',
+    url: 'https://my-portfolio-x6f3.vercel.app',
+   }
 };
 
 export default function RootLayout({

@@ -193,7 +193,7 @@ export default function Home() {
               <FaTwitter size={20} /> 
              </a>
           </div>
-          <p>© 2026 Kuldeep Saini • Built with Next.js + Framer Motion</p>
+          <p>© {new Date().getFullYear()} Kuldeep Saini • Built with Next.js + Framer Motion</p>
         </footer>
     </div>
   );
