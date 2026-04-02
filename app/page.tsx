@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
 import Navbar from "@/components/Navbar";
+import { desc } from "framer-motion/client";
 
 
 export default function Home() {
@@ -56,6 +57,14 @@ export default function Home() {
       tech: ["Next.js", "TypeScript", "Tailwind"],
       link: "https://next-expense-tracker-u7sz.vercel.app",
       github: "https://github.com/Kuldeep9711/Next-expense-tracker",
+    },
+
+    {
+      title: "Project Two",
+      desc:  "Fullstack movie app with Next.js, React and supabase",
+      tech: ["Next.js", "TypeScript", "Tailwind"],
+      link: "https://watchlist-app-psi.vercel.app/",
+      github: "https://github.com/Kuldeep9711/watchlist-app",
     },
     //  Add 3-4 real/improved projects here
   ];
