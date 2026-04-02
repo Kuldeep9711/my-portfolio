@@ -53,7 +53,7 @@ export default function Home() {
   const projects = [
     {
       title: "Project One",
-      desc: "Fullstack app with Next.js, Prisma, and PostgreSQL",
+      desc:"Expense tracker that helps users visualize monthly spending with category breakdown, CSV export, and budget alerts.",
       tech: ["Next.js", "TypeScript", "Tailwind"],
       link: "https://next-expense-tracker-u7sz.vercel.app",
       github: "https://github.com/Kuldeep9711/Next-expense-tracker",
@@ -61,7 +61,7 @@ export default function Home() {
 
     {
       title: "Project Two",
-      desc:  "Fullstack movie app with Next.js, React and supabase",
+      desc:  "Movie website for begginer with only play trailer videos",
       tech: ["Next.js", "TypeScript", "Tailwind"],
       link: "https://watchlist-app-psi.vercel.app/",
       github: "https://github.com/Kuldeep9711/watchlist-app",
