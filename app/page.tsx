@@ -55,7 +55,7 @@ export default function Home() {
       desc: "Fullstack app with Next.js, Prisma, and PostgreSQL",
       tech: ["Next.js", "TypeScript", "Tailwind"],
       link: "https://next-expense-tracker-u7sz.vercel.app",
-      github: "#",
+      github: "https://github.com/Kuldeep9711/Next-expense-tracker",
     },
     //  Add 3-4 real/improved projects here
   ];
@@ -157,7 +157,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto px-6 text-center">
            <h2 className="text-4xl font-bold mb-8 text-zinc-900 dark:text-white">About Me</h2>
            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-         I'm a passionate fullstack developer specialization in Next.js, TypeScript, Prisma, and modern backend tools.
+         I'm a passionate fullstack developer specializing in Next.js, TypeScript, Prisma, and modern backend tools.
          I love turning ideas into clean, scalable web applications. Currently improving my Github projects with unique features.
            </p>
           </div>
@@ -167,7 +167,7 @@ export default function Home() {
         <section id="contact" className="py-24 bg-zinc-100 dark:bg-zinc-900 transition-colors duration-300">
           <div className="max-w-2xl mx-auto px-6"> {/* it is good looking */}
            <h2 className="text-4xl font-bold mb-12 text-center text-zinc-900 dark:text-white">Let's Connect</h2>
-       <ContactForm />
+          <ContactForm />
           </div>
         </section>
 

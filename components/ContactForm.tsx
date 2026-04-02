@@ -55,7 +55,7 @@ export default function ContactForm() {
          />
     </div>
 
-    {/*  */}
+    {/* Email */}
   <div>
     <input
     type="email"
